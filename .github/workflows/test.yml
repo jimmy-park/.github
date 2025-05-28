@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  workflow_call:
+
+jobs:
+  test-local:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: jimmy-park/.github
+      - run: tree -a
+      - uses: ./actions/test
+
+  test-public:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jimmy-park/.github/actions/test@main

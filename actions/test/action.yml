@@ -1,0 +1,10 @@
+name: Test composite action
+
+description: A composite action to test reusable workflows
+
+runs:
+  using: composite
+  steps:
+    - name: Run test script
+      shell: bash
+      run: echo "This is a test composite action in the reusable workflow."
